@@ -5,6 +5,10 @@
   "repository": "git@github.com:elvinciqueira/javascript-algorithms.git",
   "author": "elvinciqueira <elvinciqueira@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./src/*",
+    "test": "jest"
+  },
   "devDependencies": {
     "@types/jest": "^25.2.3",
     "jest": "^26.0.1",
@@ -13,9 +17,8 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "2.20.1",
-    "eslint-plugin-prettier": "^3.1.3"
-  },
-  "scripts": {
-    "test": "jest"
+    "eslint-plugin-prettier": "^3.1.3",
+    "@babel/cli": "^7.4.4",
+    "@babel/preset-env": "^7.4.5"
   }
 }
