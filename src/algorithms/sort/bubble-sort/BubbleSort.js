@@ -1,8 +1,8 @@
 (function bubbleSort(input) {
-  let sorted = true
+  let swapSignal = true
 
-  while (sorted) {
-    sorted = false
+  while (swapSignal) {
+    swapSignal = false
 
     for (let i = 0; i < input.length - 1; i++) {
 
@@ -12,7 +12,7 @@
         input[i] = input[i + 1]
         input[i + 1] = temp
 
-        sorted = true
+        swapSignal = true
       }
     }
   }
