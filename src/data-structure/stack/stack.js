@@ -1,81 +1,81 @@
 class Stack {
   constructor() {
-    this.items = []
-    this.count = 0
+    this.items = [];
+    this.count = 0;
   }
 
   push(element) {
-    this.items[this.count] = element
-    console.log(`${element} added to poisition ${this.count}`)
-    this.count += 1
+    this.items[this.count] = element;
+    console.log(`${element} added to poisition ${this.count}`);
+    this.count += 1;
 
-    return this.count - 1
+    return this.count - 1;
   }
 
   pop() {
-    if (this.count === 0) return undefined
+    if (this.count === 0) return undefined;
 
-    let deleteItem = this.items[this.count - 1]
-    this.count -= 1
-    console.log(`${deleteItem} removed`)
+    let deleteItem = this.items[this.count - 1];
+    this.count -= 1;
+    console.log(`${deleteItem} removed`);
 
-    return deleteItem
+    return deleteItem;
   }
 
   peek() {
-    console.log(`Top element is ${this.items[this.count - 1]}`)
+    console.log(`Top element is ${this.items[this.count - 1]}`);
 
-    return this.items[this.count - 1]
+    return this.items[this.count - 1];
   }
 
   isEmpty() {
-    console.log(this.count === 0 ? 'Stack is empty' : 'Stack is not empty')
+    console.log(this.count === 0 ? 'Stack is empty' : 'Stack is not empty');
 
-    return this.count === 0
+    return this.count === 0;
   }
 
   size() {
-    console.log(`${this.count} elements in stack`)
+    console.log(`${this.count} elements in stack`);
 
-    return this.count
+    return this.count;
   }
 
   print() {
-    let str = ''
+    let str = '';
 
     for (let i = 0; i < this.count; i++) {
-      str += this.items[i] + ' '
+      str += this.items[i] + ' ';
     }
 
-    return str
+    return str;
   }
 
   clear() {
-    this.items = []
-    this.count = 0
+    this.items = [];
+    this.count = 0;
 
-    console.log('Stack is cleared')
+    console.log('Stack is cleared');
 
-    return this.items
+    return this.items;
   }
 }
 
-const stack = new Stack()
+const stack = new Stack();
 
-stack.isEmpty()
+stack.isEmpty();
 
-stack.push(100)
-stack.push(200)
-stack.push(300)
+stack.push(100);
+stack.push(200);
+stack.push(300);
 
-console.log(stack.print())
+console.log(stack.print());
 
-stack.size()
+stack.size();
 
-stack.peek()
+stack.peek();
 
-stack.pop()
+stack.pop();
 
-stack.clear()
+stack.clear();
 
-stack.isEmpty()
+stack.isEmpty();
