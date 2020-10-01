@@ -9,6 +9,6 @@
  * isEmpty('text') // => false
  */
 
-function isEmpty(thing) {
+export default function isEmpty(thing) {
   return !thing || thing.length < 1;
 }
