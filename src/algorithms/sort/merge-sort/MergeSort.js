@@ -9,7 +9,7 @@ function.
  * splitSort([3, 2]) => [2, 3]
  */
 
-function splitSort(array) {
+export function splitSort(array) {
   const size = array.length;
 
   //base case
@@ -24,10 +24,7 @@ function splitSort(array) {
   // recursive split in half and merge back
   const half = Math.ceil(size / 2);
 
-  return merge(
-    splitSort(array.slice(0, half)),
-    splitSort(array.slice(half))
-  );
+  return merge(splitSort(array.slice(0, half)), splitSort(array.slice(half)));
 }
 
 /**
@@ -41,14 +38,16 @@ function splitSort(array) {
  * merge([2,5,9], [1,6,7]) => [1, 2, 5, 6, 7, 9]
  */
 
-function merge(array1, array2 = []) {
+export function merge(array1, array2 = []) {
   const mergedLength = array1.length + array2.length;
   const mergedArray = Array(mergedLength);
 
   // merge elements on a and b in asc order. Run-time O(a + b)
   for (let index = 0, i1 = 0, i2 = 0; index < mergedLength; index++) {
-
-    if (i2 >= array2.length || (i1 < array1.length && array1[i1] <= array2[i2])) {
+    if (
+      i2 >= array2.length ||
+      (i1 < array1.length && array1[i1] <= array2[i2])
+    ) {
       mergedArray[index] = array1[i1];
 
       i1 += 1;
