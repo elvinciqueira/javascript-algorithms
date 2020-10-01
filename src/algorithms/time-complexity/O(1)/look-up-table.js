@@ -5,13 +5,10 @@ const dictionary = {
   of: 10343885,
   a: 10144200,
   in: 6996437,
-  to: 6332195 /* ... */
+  to: 6332195 /* ... */,
 };
 
-function getWordFrequency(dictionary, word) {
+export default function getWordFrequency(dictionary, word) {
   //O(1)
-  return dictionary[word]
+  return dictionary[word];
 }
-
-console.log(getWordFrequency(dictionary, 'the'))
-console.log(getWordFrequency(dictionary, 'of'))

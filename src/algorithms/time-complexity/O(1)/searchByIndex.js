@@ -10,6 +10,6 @@
  * @returns {any} value or undefined if not found
  */
 
-function searchByIndex(array, index) {
+export default function searchByIndex(array, index) {
   return array[index];
 }
