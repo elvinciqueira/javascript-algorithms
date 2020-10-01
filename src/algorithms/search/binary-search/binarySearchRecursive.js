@@ -11,7 +11,7 @@
  * @return index of the found element or -1 if not found
  */
 
-function binarySearchRecursive(array, search, offset = 0) {
+export default function binarySearchRecursive(array, search, offset = 0) {
   //split array in half
   const half = parseInt(array.length / 2, 10);
   const current = array[half];
