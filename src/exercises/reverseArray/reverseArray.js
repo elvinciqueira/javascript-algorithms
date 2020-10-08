@@ -1,9 +1,15 @@
 export default function reverseArray(arr) {
-  const newArray = [];
+  let leftPointer = 0;
+  let rightPointer = arr.length - 1;
 
-  for (let i = arr.length - 1; i >= 0; i--) {
-    newArray.push(arr[i]);
+  while (leftPointer < rightPointer) {
+    let temp = arr[leftPointer];
+    arr[leftPointer] = arr[rightPointer];
+    arr[rightPointer] = temp;
+
+    leftPointer++;
+    rightPointer--;
   }
 
-  return newArray;
+  return arr;
 }
