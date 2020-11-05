@@ -19,7 +19,7 @@
 const sockMerchant = (n, arr) => {
   let socks = {};
 
-  for (let i = 0; i < n - 1; i++) {
+  for (let i = 0; i < arr.length; i++) {
     socks[arr[i]] ? socks[arr[i]]++ : socks[arr[i]] = 1;
   }
 
