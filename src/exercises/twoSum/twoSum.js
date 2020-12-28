@@ -3,14 +3,18 @@
  * @param {number} target
  * @return {number[]}
  */
+
 export default function twoSum(nums, target) {
-  let result = 0;
+  const calc_nums = {}
 
-  for (let i = 0; i < nums.length - 1 ; i++) {
-    result = nums[i] + nums[i + 1];
+  for (const n of nums) {
+    let diff = target - n
 
-    if (result === target) {
-      return [i, i + 1];
+    if (diff in calc_nums) {
+      return [diff, n]
+    } else {
+      calc_nums[n] = true
     }
   }
+  return []
 }
