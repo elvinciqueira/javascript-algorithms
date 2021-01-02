@@ -5,16 +5,17 @@
  */
 
 export default function twoSum(nums, target) {
-  const calc_nums = {}
+  const calc_nums = {};
 
   for (const n of nums) {
-    let diff = target - n
+    let diff = target - n;
 
     if (diff in calc_nums) {
-      return [diff, n]
+      return [diff, n];
     } else {
-      calc_nums[n] = true
+      calc_nums[n] = true;
     }
   }
-  return []
+
+  return [];
 }
