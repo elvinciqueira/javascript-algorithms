@@ -23,20 +23,19 @@ function allPrimesOf(aNumber) {
 }
 
 function primeFactorsOf(aNumber) {
-  const primes = allPrimesOf(aNumber);
-  const factors = [];
+  const result = [];
   let i = 0;
 
   while (aNumber >= 2) {
-    if (aNumber % primes[i] === 0) {
-      factors.push(primes[i]);
-      aNumber = aNumber / primes[i];
+    if (aNumber % allPrimesOf(aNumber)[i] === 0) {
+      result.push(allPrimesOf(aNumber)[i]);
+      aNumber = aNumber / allPrimesOf(aNumber)[i];
     } else {
       i++;
     }
   }
 
-  return factors;
+  return result;
 }
 
-console.log(primeFactorsOf(24)); //?
+console.log(primeFactorsOf(20)); //?
