@@ -18,8 +18,6 @@ function myForEach(arr, func) {
 // }); //?
 
 let sum = 0;
-myForEach([1, 2, 3, 4, 5], (num, i) => {
-  sum += num;
-});
+myForEach([1, 2, 3, 4, 5], num => (sum += num));
 
 console.log(sum);
