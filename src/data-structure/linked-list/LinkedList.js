@@ -26,6 +26,32 @@ class SinglyLinkedList {
 
     return newNode;
   }
+
+  pop() {
+    if (!this.length) {
+      return null;
+    } else {
+      let currentNode = this.head;
+      let secondToLastNode = this.head;
+
+      while (currentNode.next) {
+        secondToLastNode = currentNode;
+        currentNode = currentNode.next;
+      }
+
+      secondToLastNode.next = null;
+
+      this.tail = secondToLastNode;
+      this.length -= 1;
+
+      if (!this.length) {
+        this.head = null;
+        this.tail = null;
+      }
+
+      return currentNode;
+    }
+  }
 }
 
 const newSLL = new SinglyLinkedList();
@@ -33,5 +59,7 @@ const newSLL = new SinglyLinkedList();
 newSLL.push('A'); //?
 newSLL.push('B'); //?
 newSLL.push('C'); //?
+
+newSLL.pop();
 
 console.log(newSLL);
