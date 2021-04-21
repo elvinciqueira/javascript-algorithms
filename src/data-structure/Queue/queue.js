@@ -1,36 +1,52 @@
-const LinkedList = require('../linked-list/DoublyLinkedList');
-
-class Queue {
-  constructor(iterable = []) {
-    this.items = new LinkedList(iterable);
+export default class Queue {
+  constructor() {
+    this.count = 0;
+    this.lowestCount = 0;
+    this.items = {};
   }
 
-  /**
-   * Add element to the back of the queue.
-   * Runtime: O(1)
-   * @param {any} item
-   * @returns {queue} instance to allow chaining.
-   */
-  enqueue(item) {
-    this.items.addLast(item);
-
-    return this;
+  enqueue(element) {
+    this.items[this.count] = element;
+    this.count++;
   }
 
-  /**
-   * Remove element from the front of the queue.
-   * Runtime: O(1)
-   * @returns {any} removed value.
-   */
   dequeue() {
-    return this.items.removeFirst();
+    if (this.isEmpty()) return undefined;
+
+    const result = this.items[this.lowestCount];
+    delete this.items[this.lowestCount];
+    this.lowestCount++;
+    return result;
+  }
+
+  peek() {
+    if (this.isEmpty()) return undefined;
+
+    return this.items[this.lowestCount];
+  }
+
+  isEmpty() {
+    return this.size() === 0;
+  }
+
+  size() {
+    return this.count - this.lowestCount;
+  }
+
+  clear() {
+    this.items = {};
+    this.count = 0;
+    this.lowestCount = 0;
+  }
+
+  toString() {
+    if (this.isEmpty()) return '';
+
+    let objString = `${this.items[this.lowestCount]}`;
+    for (let i = this.lowestCount + 1; i < this.count; i++) {
+      objString = `${objString},${this.items[i]}`;
+    }
+
+    return objString;
   }
 }
-
-const queue = new Queue();
-queue.enqueue('a');
-queue.enqueue('b');
-queue.dequeue(); //↪️ a
-queue.enqueue('c');
-queue.dequeue(); //↪️ b
-queue.dequeue(); //↪️ c
