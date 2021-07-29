@@ -1,8 +1,8 @@
 export function maxMin(A) {
   let len = A.length;
-  let max = A[0];
-  let min = A[0];
-  for (let i = 1; i < len; i++) {
+  let max = -Infinity;
+  let min = Infinity;
+  for (let i = 0; i < len; i++) {
     if (A[i] > max) {
       max = A[i];
     }
