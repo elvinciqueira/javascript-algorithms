@@ -3,20 +3,26 @@
  * @return {boolean}
  */
 
-export default function palindromeCheck(str) {
-  let reverseIndex = str.length - 1;
+// O(n) time, space O(n)
+// export default function palindromeCheck(str) {
+//   let reversedString = '';
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reversedString += str[i];
+//   }
+//   return str === reversedString;
+// }
 
-  for (let index = 0; index < str.length - 1; index++) {
-    if (index === reverseIndex) {
+// O(n) time, space O(1)
+export default function palindromeCheck(str) {
+  let leftPointer = str.length - 1;
+  for (let rightPointer = 0; rightPointer < str.length; rightPointer++) {
+    if (leftPointer === rightPointer) {
       return true;
     }
-
-    if (str[index] !== str[reverseIndex]) {
+    if (str[leftPointer] !== str[rightPointer]) {
       return false;
     }
-
-    reverseIndex--;
+    leftPointer -= 1;
   }
-
   return true;
 }
