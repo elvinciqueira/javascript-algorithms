@@ -1,3 +1,1 @@
-export function arrayDiff(a, b) {
-  return a.filter(value => !b.includes(value));
-}
+export const array_diff = (a, b) => a.filter(value => !b.includes(value));
