@@ -1,4 +1,4 @@
-import { array_diff } from './array_diff';
+import { array_diff } from './arrayDiff';
 
 describe('array_diff()', () => {
   describe('It should remove all values from list a, which are present in list b keeping their order.', () => {
