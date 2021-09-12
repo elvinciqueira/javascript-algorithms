@@ -3,13 +3,11 @@ const _split = str => {
   let index = 0;
   for (let j = 0; j < str.length; j++) {
     if (str[j] === ' ') {
-      if (index !== j) {
-        array.push(str.slice(index, j));
-      }
+      if (index !== j) array.push(str.slice(index, j));
       index = j + 1;
     }
   }
-  array.push(str.slice(index, str.length));
+  if (index < str.length - 1) array.push(str.slice(index));
   return array;
 };
 
@@ -25,5 +23,5 @@ export const reverseString = A => {
     left++;
     right--;
   }
-  return stringToArray.join(' ').trim();
+  return stringToArray.join(' ');
 };
