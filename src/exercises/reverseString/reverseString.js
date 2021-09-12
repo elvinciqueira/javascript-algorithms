@@ -3,7 +3,10 @@ const _split = str => {
   let index = 0;
   for (let j = 0; j < str.length; j++) {
     if (str[j] === ' ') {
-      if (index !== j) array.push(str.slice(index, j));
+      if (index !== j) {
+        const word = str.slice(index, j);
+        array.push(word);
+      }
       index = j + 1;
     }
   }
