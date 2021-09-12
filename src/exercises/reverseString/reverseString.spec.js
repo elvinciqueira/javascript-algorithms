@@ -13,5 +13,9 @@ describe('reverseString()', () => {
     test('reverseString("this is ib") should return "ib is this"', () => {
       expect(reverseString('this is ib')).toBe('ib is this');
     });
+
+    test('reverseString("j") should return "j"', () => {
+      expect(reverseString('j')).toBe('j');
+    });
   });
 });
