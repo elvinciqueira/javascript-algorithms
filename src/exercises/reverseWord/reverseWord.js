@@ -25,7 +25,7 @@ const _reverse = arr => {
   return arr;
 };
 
-export const reverseString = A => {
+export const reverseWord = A => {
   const stringToArray = _split(A);
   const reversed = _reverse(stringToArray);
   return reversed.join(' ');
