@@ -21,5 +21,14 @@ describe('for n problems to the participants', () => {
         [0, 1, 1],
       ]),
     ).toBe(2);
+    expect(
+      problemSet([
+        [1, 0, 0],
+        [0, 1, 0],
+        [1, 1, 1],
+        [0, 0, 1],
+        [0, 0, 0],
+      ]),
+    ).toBe(1);
   });
 });
