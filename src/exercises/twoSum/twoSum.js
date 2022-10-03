@@ -18,19 +18,34 @@
 //   return [];
 // }
 
-// Solution 2 - O(n), Space O(n)
+/**
+ * Hash Map - 2 Pass
+ * Time O(N) | Space O(N)
+ * https://leetcode.com/problems/two-sum/
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 export default function twoSum(nums, target) {
-  const calc_numbers = {};
-  for (let num of nums) {
-    const result = target - num;
-    if (result in calc_numbers) {
-      return [result, num];
-    } else {
-      calc_numbers[num] = true;
-    }
+  const map = getMap(nums);
+  return getSum(nums, target, map);
+}
+
+const getMap = (nums, map = new Map()) => {
+  for (let index = 0; index <= nums.length; index++) {
+    map.set(nums[index], index);
+  }
+  return map;
+};
+
+const getSum = (nums, target, map) => {
+  for (let index = 0; index <= nums.length; index++) {
+    const difference = target - nums[index];
+    const isTargetSum = map.has(difference) && map.get(difference) !== index;
+    if (isTargetSum) return [nums[index], difference];
   }
   return [];
-}
+};
 
 //Solution 3 - O(n log(n))
 // export default function twoSum(nums, target) {
@@ -49,5 +64,3 @@ export default function twoSum(nums, target) {
 //   }
 //   return [];
 // }
-
-twoSum([4, 1, 2, -2, 11, 16, 1, -1, -6, -4], 9); //?
