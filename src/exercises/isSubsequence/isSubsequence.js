@@ -6,13 +6,17 @@
  * @param {string} t
  * @return {boolean}
  */
-export const isSubsequence = (s, t) => shouldFoundSubsequence(s, t);
+export const isSubsequence = (s, t) => shouldFindSubsequence(s, t);
 
-const shouldFoundSubsequence = (s, t) => {
-  let sPointer = 0;
-  for (let tPointer = 0; tPointer < t.length; tPointer++) {
-    const isEqual = s[sPointer] === t[tPointer];
-    if (isEqual) sPointer++;
+const shouldFindSubsequence = (originalString, newString) => {
+  let firstPointer = 0;
+  for (
+    let secondPointer = 0;
+    secondPointer < newString.length;
+    secondPointer++
+  ) {
+    const isEqual = originalString[firstPointer] === newString[secondPointer];
+    if (isEqual) firstPointer++;
   }
-  return sPointer === s.length;
+  return firstPointer === originalString.length;
 };
